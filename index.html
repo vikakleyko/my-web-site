@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <nav id="nav">
+        <div class="logo">
+          <h4>VK</h4>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a class="active" href="#nav">Home</a>
+          </li>
+          <li>
+            <a href="#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+      <section id="home" class="home">
+        <div class="home-background"></div>
+
+        <div class="page-wrap">
+          <h1>Viktoriia Kleiko</h1>
+          <h2>Front-end & web developer</h2>
+          <a href="#portfolio">View my work</a>
+        </div>
+      </section>
+      <section>
+        <div id="portfolio" class="portfolio-container">
+          Below you can see some projects I've been working on lately.
+        </div>
+      </section>
+
+      <section>
+        <div class="project-container">
+          <div class="info-container">
+            <h1>Design Studio</h1>
+            <p>
+              In a Swedish company
+              <a class="company-link" href="https://www.neava.se/">Neava</a>
+              worked on multi-client web application to construct 3d house model
+              generated in Unity. I was responsible for implementing the
+              interface with a unique style and set of functions for each client
+            </p>
+          </div>
+
+          <a
+            class="button-learn-more"
+            href="http://beta.design-studio.se/nds/?env=neava&model=demo-house"
+            >Learn more</a
+          >
+          <figure>
+            <img src="./images/DS_screenshot.png" />
+          </figure>
+        </div>
+      </section>
+      <section>
+        <div class="project-container">
+          <div class="info-container">
+            <h1>Basic Scheduler</h1>
+            <p>
+              In a Swedish company
+              <a class="company-link" href="https://www.mobilaris.se/"
+                >Mobilaris</a
+              >
+              Developed a scheduling tool for reporting activities in a mine. I
+              was responsible for front-end and collaboration with backend team
+              to design API
+            </p>
+          </div>
+
+          <a
+            class="button-learn-more"
+            href="https://mobilaris.se/mining-civil-engineering/mobilaris-scheduler/"
+            >Learn more</a
+          >
+          <figure>
+            <img src="./images/BS_printscreen.png" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="about" class="about-container">
+        <div class="info-container">
+          <h1>About me</h1>
+          <p>
+            I am a web developer who is
+            interested in creating elegant solutions in the shortest time and
+            takes care of the user experience. I am developing web interfaces,
+            interfaces for mobile devices and tablets. I also have skills in
+            other areas, such as Android app development.
+          </p>
+        </div>
+      </section>
+      <section id="contact" class="contact-container">
+        <div class="info-container">
+            <h3 class="h2">
+                Thanks!
+            </h3>
+            <h4>Want to get in touch?</h4>
+
+            <div class="tooltip">     
+                <a class="contact-button" onclick="copy()">
+                    <img src="./images/iconfinder_Mail_194919.png">Contact me</img>
+                    <input id="cb" type="text" hidden>
+                </a>
+            <span class="tooltiptext">Click to copy my email address to clipboard</span>
+                </div>
+            <div class="icons-panel">
+                <a href="https://www.linkedin.com/in/viktoriia-kleiko/">
+                    <img src="./images/iconfinder_square-linkedin_317725.png"></img>
+                </a>
+                <a href="https://www.facebook.com/vika.kleyko">
+                    <img src="./images/iconfinder_square-facebook_317727.png"></img>
+                </a>
+                <a href="https://www.instagram.com/viktoriia.kleiko/">
+                    <img src="./images/iconfinder_Instagram_1298747.png"></img>
+                </a>
+            </div>
+        </div>
+      </section>
+      <section>
+          <div class="made-by-container">
+            © Viktoriia Kleiko, 2020, San Francisco
+          </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
