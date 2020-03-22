@@ -170,6 +170,10 @@ figure img {
   padding: 50px 30px;
   width: 50%;
 }
+.runit-app {
+  padding: 50px 30px;
+  width: 20%;
+}
 .info-container h4 {
   font-size: 20px;
   padding: 20px;
@@ -333,6 +337,10 @@ h3.h2 {
   h3.h2:after,
   h3.h2:before {
     width: 30%;
+  }
+
+  .runit-app {
+    width: 100%;
   }
 }
 
