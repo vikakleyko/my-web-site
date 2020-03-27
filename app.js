@@ -46,6 +46,56 @@ const setToActive = () => {
   }
 };
 
+// Get the modal
+var modalDSDemo = document.querySelector(".ds-demo-modal");
+var modalDSSN = document.querySelector(".ds-sn-modal");
+var modalBS = document.querySelector(".ds-sn-modal");
+var modalRunit = document.querySelector(".ds-runit-modal");
+
+// Get the button that opens the modal
+var btnDSDemo = document.querySelector(".ds-demo-button");
+var btnDSSN = document.querySelector(".ds-sn-button");
+var btnBS = document.querySelector(".bs-button");
+var btnRunit = document.querySelector(".runit-button");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+btnDSDemo.onclick = function() {
+  modalDSDemo.style.display = "block";
+};
+btnDSSN.onclick = function() {
+  modalDSSN.style.display = "block";
+};
+btnBS.onclick = function() {
+  modalBS.style.display = "block";
+};
+btnRunit.onclick = function() {
+  modalRunit.style.display = "block";
+};
+
+span.onclick = function() {
+  modalDSDemo.style.display = "none";
+  modalDSSN.style.display = "none";
+  modalBS.style.display = "none";
+  modalRunit.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == modalDSDemo) {
+    modalDSDemo.style.display = "none";
+  };
+  if (event.target == modalDSSN) {
+    modalDSSN.style.display = "none";
+  };
+  if (event.target == modalBS) {
+    modalBS.style.display = "none";
+  };
+  if (event.target == modalRunit) {
+    modalRunit.style.display = "none";
+  };
+};
+
 navSlide();
 setToActive();
 
