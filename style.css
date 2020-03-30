@@ -68,7 +68,7 @@ nav {
 
 /* section home */
 .home-background {
-  background-image: linear-gradient( rgba(122, 129, 131, 0), rgba(50, 52, 53, 0.85) ), url(./images/sweden.jpg);
+  background-image: linear-gradient( rgba(122, 129, 131, 0.47), rgba(88, 88, 88, 0.53) ), url(./images/sweden-bridge.jpg);
   height: 100vh;
   position: relative;
   width: 100%;
@@ -81,7 +81,7 @@ nav {
   align-items: center;
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -91,7 +91,7 @@ nav {
 .page-wrap h1,
 .page-wrap h2 {
   color: var(--main-text-color-light);
-  font-weight: 300;
+  font-weight: 600;
   text-align: center;
 }
 .page-wrap h1 {
@@ -101,11 +101,12 @@ nav {
   font-size: 26px;
 }
 .page-wrap a {
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 600;
   text-align: center;
   display: block;
   color: var(--main-text-color-light);
-  border: 1px solid var(--main-text-color-light);
+  border: 2px solid var(--main-text-color-light);
   margin: 30px;
   padding: 20px 0;
   text-decoration: none;
@@ -122,21 +123,20 @@ nav {
 
 .portfolio-section {
   text-align: center;
-  background: #49494c;
-  /**background-image: linear-gradient( rgba(122, 129, 131, 0), rgba(50, 52, 53, 0.85) ), url(./images/light-house-2.jpg);*/
+  background: #fbfbfb;
+  /**background-image: linear-gradient( rgba(122, 129, 131, 0), rgba(50, 52, 53, 0.85) ), url(./images/sweden.jpg);*/
 }
 .gallery{
   display: inline-block;
   margin: 60px 100px;
 }
 
-.portfolio-container {
-  border-bottom: 1px solid #f1f1f1;
-  padding: 5em 0;
-  background: #ebe7e7;
-  text-align: center;
-  font-size: 20px;
-  color: var(--main-text-color-dark);
+.header-container {
+  font-size: 18px;
+  padding: 20px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: var(--main-text-color-light);
   line-height: 1.7em;
 }
 .project-container {
@@ -164,7 +164,7 @@ nav {
 .info-container h1 {
   font-size: 18px;
   padding: 20px 10%;
-  color: var(--main-text-color-dark);
+  color: var(--main-text-color-light);
   line-height: 1.7em;
 }
 .company-link {
@@ -187,23 +187,33 @@ nav {
 }
 .image-container:hover .project-image{
   cursor: pointer;
-  opacity: 0.3;
 }
 
 .image-container:hover .middle {
   opacity: 1;
 }
 .middle {
-  transition: .5s ease;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
   opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(71, 73, 71, 0.747);
+}
+.overlay{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
+
 .text-top{
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 4em grey, 0 0 1em grey;
@@ -230,6 +240,9 @@ nav {
 }
 
 /*  Modal  **/
+.modal .ds-sn-modal{
+  width: 100%;
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -250,7 +263,7 @@ nav {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  max-width: 800px;
 }
 
 /* The Close Button */
@@ -259,6 +272,21 @@ nav {
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+.button-display-left{
+  width: 50px;
+  background: none;
+  height: 40px;
+  cursor: pointer;
+}
+
+.button-display-right{
+  float: right;
+  width: 50px;
+  background: none;
+  height: 40px;
+  cursor: pointer;
+  right: 0;
 }
 
 
@@ -269,31 +297,44 @@ nav {
   cursor: pointer;
 }
 
-/* about section **/
+/* about me section **/
+.my-description{
+  text-align: center;
+}
+.about-description{
+  padding: 60px 100px;
+}
+.about-description p{
+  font-size: 28px;
+  display: inline-block;
+  position: relative;
+  width: 500px;
+  margin: 0 70px;
+  font-family: 'Kalam', cursive;
+  top: -50px;
+}
+.description-container{
+  text-align: center;
+}
 .my-photo {
-  padding: 50px 30px;
-  width: 25%;
+  width: 300px;
+  display: inline-block;
+  position: relative;
 }
 .info-container h4 {
   font-size: 20px;
   padding: 20px;
   font-weight: 200;
   padding: 30px 0 65px 0;
+  color: var(--main-text-color-light);
 }
 
 .about-container {
-  background: #ebe7e7;
-  font-size: 20px;
-  color: var(--main-text-color-dark);
-  line-height: 1.7em;
-  min-height: 40vh;
-  text-align: center;
-  border-bottom: 1px solid #ebe7e7;
-  width: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: #ebe7e7;
+    display: flex;
+    justify-content: center;
+    padding: 3.5em 0;
+    background: #39393a;
 }
 .contact-container {
   min-height: 50vh;
@@ -391,6 +432,9 @@ h3.h2 {
   .nav-links {
     width: 60%;
   }
+  .my-photo{
+    width: 400px;
+  }
 }
 
 /* mobile resolution */
@@ -439,10 +483,23 @@ h3.h2 {
     width: 30%;
   }
 
+  .about-container{
+    padding: 0;
+  }
   .my-photo {
     width: 100%;
   }
-
+  .about-description {
+    padding: 30px;
+    text-align: center;
+}
+.about-description p{
+  padding: 10px;
+  margin: 0;
+  width: 300px;
+  font-size: 16px;
+  top: 0;
+}
   .project-image {
     padding: 0;
     margin: 0;
@@ -454,13 +511,10 @@ h3.h2 {
   }
 
   .portfolio-container {
-    border-bottom: 1px solid #f1f1f1;
-    padding: 2em 0;
     background: #ebe7e7;
-    text-align: center;
-    font-size: 18px;
-    color: var(--main-text-color-dark);
-    line-height: 1.7em;
+    display: flex;
+    justify-content: center;
+    padding: 3.5em 0;
   }
 }
 
