@@ -13,15 +13,23 @@ html {
   --main-text-color-dark: rgb(56, 56, 56);
   --main-text-color-light: rgb(228, 225, 224);
   --border-color: #777776;
-  --button-background-hover: rgba(201, 96, 10, 0.842);
+  --button-background-hover: rgb(201, 96, 10);
 }
 
+.bg-image{  
+  background-image: linear-gradient(
+      rgba(122, 129, 131, 0.47),
+      rgba(88, 88, 88, 0.53)
+    ),
+    url(./images/dark-clouds.jpg);
+  transform: translate3d(0px, -27.7868%, 0px);
+}
 nav {
   top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 7vh;
+  height: 64px;
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -31,6 +39,12 @@ nav {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
+  cursor: pointer;
+}
+.logo a {
+  text-decoration: none;
+  color: var(--main-text-color-dark);
+  font-weight: 600;
 }
 .nav-links {
   display: flex;
@@ -68,7 +82,11 @@ nav {
 
 /* section home */
 .home-background {
-  background-image: linear-gradient( rgba(122, 129, 131, 0.47), rgba(88, 88, 88, 0.53) ), url(./images/sweden-bridge.jpg);
+  background-image: linear-gradient(
+      rgba(122, 129, 131, 0.47),
+      rgba(88, 88, 88, 0.53)
+    ),
+    url(./images/sweden-bridge.jpg);
   height: 100vh;
   position: relative;
   width: 100%;
@@ -91,18 +109,21 @@ nav {
 .page-wrap h1,
 .page-wrap h2 {
   color: var(--main-text-color-light);
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
+    /* text-transform: uppercase; */
+  letter-spacing: 0.1em;
 }
 .page-wrap h1 {
-  font-size: 50px;
+  font-size: 36px;
 }
 .page-wrap h2 {
   font-size: 26px;
 }
 .page-wrap a {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.1em;
   text-align: center;
   display: block;
   color: var(--main-text-color-light);
@@ -113,6 +134,8 @@ nav {
   text-shadow: 1px 1px 2px black, 0 0 4em grey, 0 0 1em grey;
   box-shadow: 1px 1px 2px rgba(122, 129, 131, 0.11),
     0 0 1em rgba(122, 129, 131, 0.26), 0 0 1em rgba(56, 56, 56, 0.5);
+  animation-name: appear;
+  animation-duration: 5s;
 }
 .page-wrap a:hover,
 .page-wrap a:focus,
@@ -121,21 +144,19 @@ nav {
   background: var(--button-background-hover);
 }
 
+/** Portfolio section*/
 .portfolio-section {
   text-align: center;
   background: #fbfbfb;
   /**background-image: linear-gradient( rgba(122, 129, 131, 0), rgba(50, 52, 53, 0.85) ), url(./images/sweden.jpg);*/
 }
-.gallery{
+.gallery {
   display: inline-block;
   margin: 60px 100px;
 }
-
 .header-container {
   font-size: 18px;
-  padding: 20px;
   letter-spacing: 3px;
-  font-weight: bold;
   color: var(--main-text-color-light);
   line-height: 1.7em;
 }
@@ -167,25 +188,19 @@ nav {
   color: var(--main-text-color-light);
   line-height: 1.7em;
 }
-.company-link {
-  text-decoration: none;
-  color: #c5260c;
-  font-weight: 600;
-}
 
 /*projects**/
 .project-image {
   width: 600px;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
   display: block;
-  backface-visibility: hidden;
 }
-.image-container{
+.image-container {
   display: inline-block;
   position: relative;
 }
-.image-container:hover .project-image{
+.image-container:hover .project-image {
   cursor: pointer;
 }
 
@@ -201,10 +216,10 @@ nav {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(71, 73, 71, 0.747);
+  transition: 0.5s ease;
+  background-color: rgba(40, 41, 40, 0.747);
 }
-.overlay{
+.overlay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -212,15 +227,16 @@ nav {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
 }
-
-.text-top{
+.text-top {
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 4em grey, 0 0 1em grey;
   font-size: 20px;
   padding: 16px 32px;
+  letter-spacing: 2px;
 }
-.text-middle{
+.text-middle {
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 4em grey, 0 0 1em grey;
   font-size: 16px;
@@ -232,16 +248,17 @@ nav {
   padding: 16px 32px;
   width: 170px;
   display: inline-block;
-  border: 1px solid var(--main-text-color-light);
+  border: 2px solid var(--main-text-color-light);
 }
-.text:hover{
+.text:hover {
   cursor: pointer;
   background: var(--button-background-hover);
 }
 
 /*  Modal  **/
-.modal .ds-sn-modal{
-  width: 100%;
+.w3-content {
+  position: relative;
+  overflow: hidden;
 }
 .modal {
   display: none; /* Hidden by default */
@@ -253,42 +270,84 @@ nav {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.hide-modal{
+  animation-name: modalclose;
+  animation-duration: 1s;
 }
 
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #888;
   max-width: 800px;
+  position: relative;
 }
 
 /* The Close Button */
 .close {
   color: #aaaaaa;
   float: right;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
+  position: absolute;
+  right: 7px;
+  top: 0;
 }
-.button-display-left{
+.button-container {
+  position: absolute;
+  top: 60%;
+  max-width: 800px;
+  width: -webkit-fill-available;
+}
+.button-display-left {
   width: 50px;
-  background: none;
   height: 40px;
   cursor: pointer;
+  border: 1px solid var(--main-text-color-light);
+  color: var(--main-text-color-light);
+  background: var(--button-background-hover);
 }
-
-.button-display-right{
+.button-display-right {
   float: right;
   width: 50px;
-  background: none;
   height: 40px;
   cursor: pointer;
   right: 0;
+  border: 1px solid var(--main-text-color-light);
+  color: var(--main-text-color-light);
+  background: var(--button-background-hover);
 }
-
+.modal-description {
+}
+.modal-description h3 {
+  padding-top: 30px;
+}
+.modal-description p {
+  font-size: 16px;
+  padding: 30px 0;
+}
+.company-link{
+  text-decoration: none;
+  background: no-repeat;
+  border: none;
+  padding: 0;
+  color: var(--button-background-hover);
+}
+.modal-description .link {
+  text-decoration: none;
+  color: var(--main-text-color-light);
+  background: var(--button-background-hover);
+  border: 1px solid var(--main-text-color-light);
+  padding: 8px 22px;
+}
 
 .close:hover,
 .close:focus {
@@ -298,28 +357,33 @@ nav {
 }
 
 /* about me section **/
-.my-description{
+.my-description {
   text-align: center;
 }
-.about-description{
+.about-description {
   padding: 60px 100px;
 }
-.about-description p{
+.description-container p {
   font-size: 28px;
   display: inline-block;
   position: relative;
   width: 500px;
   margin: 0 70px;
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   top: -50px;
 }
-.description-container{
+.hidden {
+  opacity: 0;
+}
+.description-container {
   text-align: center;
 }
 .my-photo {
   width: 300px;
   display: inline-block;
   position: relative;
+  animation-name: appear;
+  animation-duration: 5s;
 }
 .info-container h4 {
   font-size: 20px;
@@ -330,11 +394,12 @@ nav {
 }
 
 .about-container {
-    background: #ebe7e7;
-    display: flex;
-    justify-content: center;
-    padding: 3.5em 0;
-    background: #39393a;
+  background: #ebe7e7;
+  height: 11em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #39393a;
 }
 .contact-container {
   min-height: 50vh;
@@ -417,6 +482,7 @@ h3.h2 {
   font-size: 12px;
 }
 
+/** screen 'max' */
 @media only screen and (min-width: 1024px) {
   nav {
     position: sticky;
@@ -428,16 +494,38 @@ h3.h2 {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+/** screen 'middle' */
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  nav {
+    position: sticky;
+    box-shadow: 1px 1px 2px #00000008, 0 0 4em grey, 0 0 1em #808080d6;
+    background: #f1f1f1;
+  }
   .nav-links {
     width: 60%;
   }
-  .my-photo{
-    width: 400px;
+  .home-background {
+    height: 93vh;
+  }
+  .my-photo {
+    width: 300px;
+  }
+  .description-container p {
+    font-size: 20px;
   }
 }
 
-/* mobile resolution */
+/* mobile resolution landscape */
+@media screen and (orientation: landscape) and (max-width: 812px) {
+  .about-container{
+    height: 9em;
+  }
+  .description-container p {
+    font-size: 20px;
+  }
+}
+
+/* mobile resolution portrait */
 @media only screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
@@ -471,6 +559,12 @@ h3.h2 {
   .burger {
     display: block;
   }
+  .page-wrap h1 {
+    font-size: 28px;
+  }
+  .page-wrap h2 {
+    font-size: 20px;
+  }
   figure img {
     padding: 50px 10px;
     width: 90%;
@@ -482,9 +576,33 @@ h3.h2 {
   h3.h2:before {
     width: 30%;
   }
-
-  .about-container{
-    padding: 0;
+  .button-display-right, .button-display-left {
+    width: 30px;
+    height: 30px;
+  }
+  .modal-content{
+    padding: 22px;
+  }
+  .description-container {
+    max-width: 300px;
+    display: inline-block;
+  }
+  .modal-description h3 {
+    padding-top: 10px;
+    font-size: 16px;
+  }
+  .modal-description p {
+    padding: 20px 0;
+    font-size: 14px;
+}
+.modal-description .link {
+  font-size: 14px;
+}
+  .about-container {
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .my-photo {
     width: 100%;
@@ -492,21 +610,21 @@ h3.h2 {
   .about-description {
     padding: 30px;
     text-align: center;
-}
-.about-description p{
-  padding: 10px;
-  margin: 0;
-  width: 300px;
-  font-size: 16px;
-  top: 0;
-}
+  }
+  .about-description p {
+    padding: 10px;
+    margin: 0;
+    width: 300px;
+    font-size: 16px;
+    top: 0;
+  }
   .project-image {
     padding: 0;
     margin: 0;
     width: 100%;
   }
 
-  .gallery{
+  .gallery {
     margin: 0;
   }
 
@@ -533,6 +651,35 @@ h3.h2 {
   }
 }
 
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes modalclose {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/** animation */
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
