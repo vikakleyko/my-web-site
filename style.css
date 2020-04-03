@@ -111,7 +111,6 @@ nav {
   color: var(--main-text-color-light);
   font-weight: 400;
   text-align: center;
-    /* text-transform: uppercase; */
   letter-spacing: 0.1em;
 }
 .page-wrap h1 {
@@ -382,8 +381,10 @@ nav {
   width: 300px;
   display: inline-block;
   position: relative;
+}
+.my-photo-show {
   animation-name: appear;
-  animation-duration: 5s;
+  animation-duration: 12s;
 }
 .info-container h4 {
   font-size: 20px;
