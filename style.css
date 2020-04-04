@@ -328,10 +328,12 @@ nav {
 }
 .modal-description h3 {
   padding-top: 30px;
+  letter-spacing: 2px;
 }
 .modal-description p {
   font-size: 16px;
   padding: 30px 0;
+  line-height: 1.5em;
 }
 .company-link{
   text-decoration: none;
@@ -528,8 +530,11 @@ h3.h2 {
 
 /* mobile resolution portrait */
 @media only screen and (max-width: 768px) {
-  body {
+  html, body {
     overflow-x: hidden;
+  }
+  body {
+    width:100%;
   }
   .nav-links {
     position: absolute;
