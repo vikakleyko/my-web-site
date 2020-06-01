@@ -1,6 +1,6 @@
 # description
 
-Portfolio with my projects and some information about me
+Portfolio with my projects and some information about me as asoftware engineer
 
 # website
 https://vikakleyko.github.io/my-web-site/
